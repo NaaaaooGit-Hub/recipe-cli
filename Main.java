@@ -4,6 +4,7 @@ import java.util.Scanner;
 class Recipe {
     String name;
     String ingredients;
+    String videoUrl;
 }
 
 public class Main {
@@ -26,15 +27,18 @@ public class Main {
                 String name = scanner.nextLine();
                 System.out.print("材料を入力: ");
                 String ingredients = scanner.nextLine();
+                System.out.print("動画URLを入力: ");
+                String videoUrl = scanner.nextLine();
                 Recipe recipe = new Recipe();
                 recipe.name = name;
                 recipe.ingredients = ingredients;
+                recipe.videoUrl = videoUrl;
                 recipes.add(recipe);
                 System.out.println("追加しました！");
             } else if (choice == 2) {
                 System.out.println("\n=== レシピ一覧 ===");
                 for (Recipe recipe : recipes) {
-                    System.out.println("- " + recipe.name + "：" + recipe.ingredients);
+                    System.out.println("- " + recipe.name + "：" + recipe.ingredients + "　動画：" + recipe.videoUrl);
                 }
             } else if (choice == 3) {
                 System.out.println("終了します");
